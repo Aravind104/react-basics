@@ -86,4 +86,44 @@
 
   }`
 
-##
+## Displaying Data
+
+- JSX lets us put markup into javascript
+- Curly braces let you "escape back" into javascript so that you can embed some variable from your code and display it to the user.
+
+- In the `Profile.jsx` component i embeded the data from user object into the markup using `curly braces`
+
+## Conditional rendering
+
+- if you want to conditionally render component onto the screen there are basically same ways we do in core javascript
+  - using if..else condition
+  - using ternary operator
+  - using && condition
+- I gave example code for all 3 condition in the the components folder
+- Basically we are trying to render the login page if user is registered or else we need to show the Registration page
+
+## Rendering Lists
+
+- To render the List Items on to the screen in React we can use `for loop and Map function`
+
+- In the `ShopingList.jsx` component i used `map` function to render the titles of the products
+
+- You can notice that each list item has a key attribute For each item in alist you should pass a string or a number that uniquely identifies that item among its siblings
+- Key should be coming from your data, such as database ID. React will rely on your keys to understand what happened if you later insert,delete,or reorder items
+
+## Responding to events
+
+- You can respond to events by declaring event handler functions inside your component
+- In the `MyButton.jsx` component i created a button named "click" when you click on it gives the alert by calling the event handler function `handleClick`
+
+## Updating the screen
+
+- Most of the time we want components we write to "remember" some information and display it to the screen to accomplish this task we add `state` to the components
+
+- To add the `state` to the components we need to import the `useState` Hook from `React`
+
+- In the `MyButton.jsx` component i created a button named "Clicked {count} times" here `count` is the variable that kepps updating whenever user clicks on the button
+
+- useState takes intial value as the argument and it is assigned to [something,setSomething] in our case we used [count,setCount] here setSomething or any name of you choice will track the state of the something
+
+- When we render the same component two or more number of times each component maintains its own state you can see it in `App.jsx` component i rendered the `MyButton.jsx` component twice both maintain different "count value"
