@@ -118,12 +118,32 @@
 
 ## Updating the screen
 
-- Most of the time we want components we write to "remember" some information and display it to the screen to accomplish this task we add `state` to the components
+- Most of the time we want components we write to "remember" some information and display it to the screen. To accomplish this task we add `state` to the components
 
 - To add the `state` to the components we need to import the `useState` Hook from `React`
 
 - In the `MyButton.jsx` component i created a button named "Clicked {count} times" here `count` is the variable that kepps updating whenever user clicks on the button
 
-- useState takes intial value as the argument and it is assigned to [something,setSomething] in our case we used [count,setCount] here setSomething or any name of you choice will track the state of the something
+- useState takes intial value as the argument and it is assigned to [something,setSomething] in our case we used [count,setCount] here setSomething or any name of your choice will track the state of the `something` variable in our case variable is `count`
 
 - When we render the same component two or more number of times each component maintains its own state you can see it in `App.jsx` component i rendered the `MyButton.jsx` component twice both maintain different "count value"
+
+## Using Hooks
+
+- Functions starting with `use` are called `Hooks`.
+- `useState` is a built-in Hook provided by React
+- We can also write out own Hook by combining the exiting ones
+- Hooks are more restrictive than regular functions. You can only call Hooks on the top level of your component
+
+## Sharing data between components
+
+- In the `updating screen` section we have seen how diferent components maintain different state and update seperately when we click each of the button
+
+- Sometimes we want both components to update simultaneously in that case we need to move the common `useState` Hook and event handler to the parent component in our case `App.jsx` component from here we need to pass the data to the different components
+
+- The information that we pass from one component to the other is called as `props`
+
+- In the `MyButton.jsx` component we used the props passed down by the
+  `App.jsx` component in this case value of count changes at the same time when user clicks on the button
+
+-

@@ -13,16 +13,25 @@
 // }
 // export default MyButton;
 
-import { useState } from "react"
+// import { useState } from "react"
 
-export default function MyButton(){
-    const [count,setCount]=useState(0);
-    function handleClick(){
-        setCount(count+1)
-    }
-    return(
+// export default function MyButton(){
+//     const [count,setCount]=useState(0);
+//     function handleClick(){
+//         setCount(count+1)
+//     }
+//     return(
+//         <div>
+//             <button className="p-2 rounded hover:rounded-lg bg-blue-500 text-yellow-50" onClick={handleClick}>{`Clicked ${count} times`}</button>
+//         </div>
+//     )
+// }
+
+
+export default function MyButton(props){
+    return (
         <div>
-            <button className="p-2 rounded hover:rounded-lg bg-blue-500 text-yellow-50" onClick={handleClick}>{`Clicked ${count} times`}</button>
+            <button className="p-2 rounded hover:rounded-lg bg-blue-500 text-yellow-50" onClick={props.handleClick}>{`clicked ${props.count}`}</button>
         </div>
     )
 }
